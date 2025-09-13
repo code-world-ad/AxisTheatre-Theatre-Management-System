@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Successful</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/Theatre.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .transparent-box {
+            background-color: rgba(0, 0, 0, 0.7); /* Increased transparency */
+            padding: 40px; /* Increased padding for more space */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased box shadow */
+            text-align: center;
+        }
+
+        h1 {
+            color: #0686ef; /* Blue theme for the heading */
+            font-size: 2.5em; /* Larger font size */
+            margin-bottom: 20px; /* Added some margin for spacing */
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Alternative font stack */
+            letter-spacing: 1px; /* Adjust letter spacing */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add subtle text shadow */
+        }
+
+        p {
+            font-weight: bold; /* Increased font weight */
+            font-size: 1.2em; /* Larger font size */
+            color: #f7f7f7; /* Brighter color for the text */
+            margin-bottom: 15px; /* Added margin for spacing */
+        }
+
+        a.button {
+            display: inline-flex;
+            align-items: center; /* Align items vertically */
+            padding: 5px 30px; /* Increased padding for a larger button */
+            background-color: #ffd900; /* Blue color for the button */
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em; /* Larger font size */
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            margin-top: 5vh; /* Adjusted margin-top for lower position */
+        }
+
+        a.button:hover {
+            background-color: rgb(130, 114, 21); /* Darker blue on hover */
+        }
+
+        .arrow {
+            font-size: 1.5em; /* Larger font size for the arrow */
+            margin-right: 15px; /* Added margin to separate arrow from text */
+        }
+    </style>
+</head>
+<body>
+    <div class="transparent-box">
+        <h1>Reservation Successful</h1>
+        
+        <p>Your reservation was successful!</p>
+        <p>Reservation Number: {{ reservation_number }}</p>
+
+        <a href="{{ url_for('make_reservation') }}" class="button">
+            <span class="arrow">➤</span> Back to Homepage
+        </a>
+    </div>
+</body>
+</html>

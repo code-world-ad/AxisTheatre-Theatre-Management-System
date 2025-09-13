@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Welcome</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/Theatre.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        h1 {
+            color: #0686ef; /* Blue theme for the heading */
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .transparent-box {
+            background-color: rgba(0, 0, 0, 0.7); /* Increased transparency */
+            padding: 40px; /* Increased padding for more space */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased box shadow */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Display buttons below one another */
+            align-items: center; /* Center buttons horizontally */
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 50px; /* Reduced padding for smaller buttons */
+            min-width: 130px;
+            margin-bottom: 10px; /* Added margin between buttons */
+            background-color: #ffd900; /* Blue color for buttons */
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em; /* Reduced font size */
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: rgb(130, 114, 21); /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+    
+    <div class="transparent-box">
+        <ul class="button-container">
+            <li><a href="{{ url_for('find_theatres') }}" class="button">Find Theatres</a></li>
+            <li><a href="{{ url_for('make_reservation') }}" class="button">Make Reservation</a></li>
+            <li><a href="{{ url_for('logout') }}" class="button">Logout</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+

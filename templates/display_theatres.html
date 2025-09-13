@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theatres and Performance IDs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/Theatre.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .transparent-box {
+            background-color: rgba(0, 0, 0, 0.7); /* Increased transparency */
+            padding: 40px; /* Increased padding for more space */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased box shadow */
+            text-align: center;
+        }
+
+        h1 {
+            color: #0686ef; /* Blue theme for the heading */
+            font-size: 2.5em; /* Larger font size */
+            margin-bottom: 20px; /* Added some margin for spacing */
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Alternative font stack */
+            letter-spacing: 1px; /* Adjust letter spacing */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add subtle text shadow */
+        }
+
+        table {
+            width: 100%; /* Adjusted width */
+            margin: 20px auto; /* Centered the table */
+            border-collapse: collapse;
+            border: 5px solid black; /* Bold and black border */
+            border-radius: 10px; /* Rounded corners */
+            overflow: hidden; /* Hide the overflowing content */
+        }
+
+        th, td {
+            border: 1px solid white; /* Adjust border color */
+            padding: 15px; /* Adjust padding */
+            text-align: center;
+            color: black; /* Text color */
+        }
+
+        th {
+            background-color: #ffd900; /* Yellow background for headers */
+            font-size: x-large;
+            color: black; /* Text color for headers */
+        }
+
+        td{
+            font-weight: bold;
+        }
+        
+
+        tr:nth-child(even) {
+            background-color: white; /* Dark gray background for even rows */      
+        }
+
+        tr:nth-child(odd) {
+            background-color: #555; /* Slightly lighter gray background for odd rows */
+        }
+
+        th:not(:first-child),
+        td:not(:first-child) {
+            border-left: 3px solid black; /* Darker border between columns */
+        }
+    </style>
+</head>
+<body>
+    <div class="transparent-box">
+        <h1>Theatres Performance IDs and Available Seats</h1>
+
+        <table>
+            <tr>
+                <th>Theatre</th>
+                <th>Performance ID</th>
+                <th>Available Seats</th>
+            </tr>
+            {% for index in range(theatres|length) %}
+            <tr>
+                <td>{{ theatres[index] }}</td>
+                <td>{{ performance_ids[index] }}</td>
+                <td>{{ available_seats[index] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
+

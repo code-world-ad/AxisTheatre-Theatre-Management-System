@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Movie Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/Theatre.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        h1 {
+            color: #0686ef; /* Blue theme for the heading */
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .transparent-box {
+            background-color: rgba(0, 0, 0, 0.7); /* Increased transparency */
+            padding: 40px; /* Increased padding for more space */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increased box shadow */
+            position: relative; /* Relative positioning for absolute positioning of buttons */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Display buttons below one another */
+            align-items: center; /* Center buttons horizontally */
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 10px 50px; /* Reduced padding for smaller buttons */
+            min-width: 130px;
+            margin-bottom: 10px; /* Added margin between buttons */
+            background-color: #ffd900; /* Blue color for buttons */
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em; /* Reduced font size */
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        a.button:hover {
+            background-color: rgb(130, 114, 21); /* Darker blue on hover */
+        }
+
+        .login-register-buttons {
+            bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .login-register-buttons a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s;
+        }
+
+        .login-register-buttons a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ session['username'] }}!</h1>
+    
+    <div class="transparent-box">
+        <ul class="button-container">
+            <li><a href="{{ url_for('login') }}" class="button">To login</a></li>
+            <li><a href="{{ url_for('register_user') }}" class="button">To register</a></li>
+        </ul>
+
+    </div>
+</body>
+</html>
